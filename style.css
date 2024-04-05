@@ -1,0 +1,149 @@
+body {
+    background: linear-gradient(135deg, #3f4c6b, #191f4d);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Add border animation */
+@keyframes borderAnimation {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 100px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, #191f4d, #3f4c6b);
+}
+
+/* Apply wave animation to pseudo-elements */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: 30px;
+    background: linear-gradient(to right, #191f4d 10%, #3f4c6b 50%, #191f4d 90%);
+    animation: waveAnimation 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.container::after {
+    bottom: -60px;
+    animation-delay: 2s;
+}
+
+/* Apply wave animation to pseudo-elements */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: 30px;
+    background: linear-gradient(to right, #191f4d 10%, #3f4c6b 50%, #191f4d 90%);
+    animation: waveAnimation 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.container::after {
+    bottom: -60px;
+    animation-delay: 2s;
+}
+
+
+
+button {
+    background-color: #4caf50; /* Green */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Dark green */
+}
+
+.story-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meditation-quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #2196f3; /* Blue */
+}
+
+.relaxation-exercise {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #ff9800; /* Orange */
+}
+
+.video-container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Cool shadow effect */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.meditation-quote,
+.relaxation-exercise,
+.video-container {
+    animation: fadeIn 1s ease-in-out;
+}
